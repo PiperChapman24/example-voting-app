@@ -34,3 +34,6 @@ pipeline{
     }
    }
 }
+
+cd vote
+docker build .
