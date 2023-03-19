@@ -38,7 +38,7 @@ pipeline{
 
             NEW_REVISION=$(echo $NEW_TASK_INFO | jq '.taskDefinition.revision')
             aws ecs update-service --cluster voteapp --service vote --region us-east-1 --task-definition vote-app-c41:${NEW_REVISION}
-            aws ecs describe-services --cluster voteapp --service vote
+            aws ecs describe-services --cluster voteapp --service vote --region us-east-1 --task-definition vote-app-c41:${NEW_REVISION}
             '''
         }
     }
