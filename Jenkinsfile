@@ -42,7 +42,12 @@ pipeline{
             '''
         }
     }
-   }
+    stage('prod Stage'){ 
+       steps{
+            when { ENVIRONMENT : 'Prod'}
+            sh echo 'hey'      
+       }
+    }      
    post{
     always{
         echo "Always Run"
